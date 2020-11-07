@@ -17,14 +17,15 @@ public abstract class Animal {
 	
 	public abstract void live() throws AnimalIsDeadException; /** {
 		/** If statements tutorial*
-		if (isDead) {
-			//return;
-			/**Exceptions**
-			throw new AnimalIsDeadException(this);
+		if (!isDead) {
+			if (foodPoints <= 0 || age > 100) {
+				isDead = true;
+				return;
+			}
+		} else {
+			System.out.println(name + " is dead");
 		}
 		/******************
-		System.out.println(name + " is living");
-		age(1);
 	}**/
 
 	public void age(int years) {
